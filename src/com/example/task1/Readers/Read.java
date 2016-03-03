@@ -1,7 +1,6 @@
 package com.example.task1.Readers;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,15 +28,14 @@ public class Read {
     }
 
     public static String readAll(String path) {
-        String s=" ";
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             String line;
             while ((line = reader.readLine()) != null){
-                s+=line;
+                return line;
             }
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-        return s;
+        return "";
     }
 }
