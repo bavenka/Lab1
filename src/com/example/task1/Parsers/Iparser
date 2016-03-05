@@ -1,0 +1,5 @@
+package com.example.task1.Parsers;
+
+public interface Iparser<T,V>{
+    public T parse(V sent);
+}

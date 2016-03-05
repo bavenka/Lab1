@@ -30,7 +30,7 @@ public class Read {
     public static String readAll(String path) {
         try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
             String line;
-            while ((line = reader.readLine()) != null){
+            while ((line = reader.readLine()) != null) {
                 return line;
             }
         } catch (IOException ex) {
@@ -39,3 +39,5 @@ public class Read {
         return "";
     }
 }
+
+
