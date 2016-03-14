@@ -1,12 +1,7 @@
 package com.example.task1;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.SynchronousQueue;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import com.example.task1.Readers.Read;
 import org.javatuples.*;
 
 public class States {

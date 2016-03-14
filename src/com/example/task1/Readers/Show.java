@@ -1,8 +1,8 @@
 package com.example.task1.Readers;
 
-import com.example.task1.Parsers.ParserOfSentiments;
-import com.example.task1.Parsers.ParserOfStates;
-import com.example.task1.Parsers.ParserOfTweets;
+import com.example.task1.Parsers.ParseSentiments;
+import com.example.task1.Parsers.ParseStates;
+import com.example.task1.Parsers.ParseTweets;
 import com.example.task1.Sentiments;
 import com.example.task1.States;
 import com.example.task1.Tweets;
@@ -18,7 +18,7 @@ public class Show {
         ArrayList<Tweets> allTweets = new ArrayList<Tweets>();
         lines = Read.readStrings("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\all_tweets.txt",2,7);
         for (String s : lines) {
-            ParserOfTweets parser = new ParserOfTweets();
+            ParseTweets parser = new ParseTweets();
             allTweets.add(parser.parse(s));
         }
         for(Tweets s:allTweets){
@@ -30,7 +30,7 @@ public class Show {
         ArrayList<Sentiments> allSentiments = new ArrayList<Sentiments>();
         lines = Read.readStrings("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\sentiments.csv",2,7);
         for (String s : lines) {
-            ParserOfSentiments parser = new ParserOfSentiments();
+            ParseSentiments parser = new ParseSentiments();
             allSentiments.add(parser.parse(s));
         }
         for(Sentiments s:allSentiments){
@@ -45,7 +45,7 @@ public class Show {
         Iterator<String> keys = json.keys();
         while (keys.hasNext()) {
             String key = keys.next();
-            ParserOfStates parserOfStates = new ParserOfStates();
+            ParseStates parserOfStates = new ParseStates();
             States state = parserOfStates.parse(json.getJSONArray(key));
             state.setName(key);
             allStates.add(state);

@@ -4,8 +4,8 @@ import com.example.task1.States;
 
 import org.json.JSONArray;
 
-public class ParserOfStates implements Iparser<States,JSONArray> {
-    @Override
+public class ParseStates {
+   // @Override
     public States parse(JSONArray sent){
         States state=new States();
         for(int i=0;i<sent.length();i++){

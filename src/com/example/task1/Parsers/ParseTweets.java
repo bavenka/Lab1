@@ -11,8 +11,8 @@ import java.util.regex.Pattern;
 /**
  * Created by Павел on 03.03.2016.
  */
-public class ParserOfTweets implements Iparser<Tweets,String> {
-    @Override
+public class ParseTweets {
+   // @Override
     public Tweets parse(String sent) {
         Tweets tweet = new Tweets();
         String s;

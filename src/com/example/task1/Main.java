@@ -8,7 +8,8 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Show.getTweets();
-        Show.getSentiments();
-        Show.getStates();
+//        Show.getSentiments();
+//        Show.getStates();
+//
    }
 }
