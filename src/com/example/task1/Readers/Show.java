@@ -1,5 +1,6 @@
 package com.example.task1.Readers;
 
+import com.example.task1.Parsers.IParse;
 import com.example.task1.Parsers.ParseSentiments;
 import com.example.task1.Parsers.ParseStates;
 import com.example.task1.Parsers.ParseTweets;
@@ -16,9 +17,19 @@ public class Show {
     private static String str;
     public static void getTweets(){
         ArrayList<Tweets> allTweets = new ArrayList<Tweets>();
-        lines = Read.readStrings("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\all_tweets.txt",2,7);
+        lines = Read.readStrings("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\all_tweets.txt",900,1500);
+        for(int i=0;i<lines.size()-1;i++){
+            if(lines.get(i+1).toString().contains("-")){
+                continue;
+            }
+            else {
+                String temp= lines.get(i).concat(lines.get(i+1));
+                lines.set(i,temp);
+                lines.remove(i+1);
+            }
+        }
         for (String s : lines) {
-            ParseTweets parser = new ParseTweets();
+            IParse<Tweets, String> parser = new ParseTweets();
             allTweets.add(parser.parse(s));
         }
         for(Tweets s:allTweets){
@@ -28,10 +39,10 @@ public class Show {
 
     public static void getSentiments(){
         ArrayList<Sentiments> allSentiments = new ArrayList<Sentiments>();
-        lines = Read.readStrings("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\sentiments.csv",2,7);
+        lines = Read.readStrings("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\sentiments.csv",900,1000);
         for (String s : lines) {
-            ParseSentiments parser = new ParseSentiments();
-            allSentiments.add(parser.parse(s));
+           IParse <Sentiments,String> parser = new ParseSentiments();
+           allSentiments.add(parser.parse(s));
         }
         for(Sentiments s:allSentiments){
             System.out.println(s.toString());

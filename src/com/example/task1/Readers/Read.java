@@ -16,10 +16,14 @@ public class Read {
                 counter++;
                 if (counter < start) {
                     continue;
-                } else if (counter >= start && counter < start + number) {
-
+                } else if (counter >= start && counter < start + number ) {
                     lines.add(line);
                 } else break;
+            }
+            for(int i=0;i<lines.size();i++){
+                if(lines.get(i).toString().isEmpty()){
+                    lines.remove(i);
+                }
             }
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
