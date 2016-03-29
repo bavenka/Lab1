@@ -8,18 +8,16 @@ import com.example.task1.Sentiments;
 import com.example.task1.States;
 import com.example.task1.Tweets;
 import org.json.JSONObject;
-
+import static java.lang.System.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Show {
+public class Describe {
     private static ArrayList<String> lines;
     private static String str;
-    public static void getTweets(){
-        ArrayList<Tweets> allTweets = new ArrayList<Tweets>();
-        lines = Read.readStrings("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\all_tweets.txt",900,1500);
+    public static void checkStrings(){
         for(int i=0;i<lines.size()-1;i++){
-            if(lines.get(i+1).toString().contains("-")){
+            if(lines.get(i+1).toString().contains("[")){
                 continue;
             }
             else {
@@ -28,25 +26,29 @@ public class Show {
                 lines.remove(i+1);
             }
         }
+    }
+    public static ArrayList<Tweets> getTweets(){
+        ArrayList<Tweets> allTweets = new ArrayList<Tweets>();
+        lines = Read.readStrings("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\all_tweets.txt",1,1000);
+        checkStrings();
         for (String s : lines) {
             IParse<Tweets, String> parser = new ParseTweets();
             allTweets.add(parser.parse(s));
         }
-        for(Tweets s:allTweets){
-            System.out.println(s.toString());
-        }
+//        for(Tweets s:allTweets){
+//            out.println(s.toString());
+//        }
+        return allTweets;
     }
 
-    public static void getSentiments(){
+    public static ArrayList<Sentiments> getSentiments(){
         ArrayList<Sentiments> allSentiments = new ArrayList<Sentiments>();
-        lines = Read.readStrings("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\sentiments.csv",900,1000);
+        lines = Read.readStrings("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\sentiments.csv",0,1000000);
         for (String s : lines) {
            IParse <Sentiments,String> parser = new ParseSentiments();
            allSentiments.add(parser.parse(s));
         }
-        for(Sentiments s:allSentiments){
-            System.out.println(s.toString());
-        }
+       return allSentiments;
     }
 
     public static void getStates(){
@@ -62,7 +64,7 @@ public class Show {
             allStates.add(state);
         }
         for(States a:allStates){
-            System.out.println(a.toString());
+            out.println(a.toString());
         }
     }
 }

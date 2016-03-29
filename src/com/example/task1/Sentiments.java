@@ -19,7 +19,7 @@ public class Sentiments {
     @Override
     public String toString() {
         return
-                "sentiment='" + word + '\'' +
-                ", digit='" + digit + '\'';
+                 word+
+                "," +digit;
     }
 }
