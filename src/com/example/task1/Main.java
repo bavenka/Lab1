@@ -51,7 +51,7 @@ public class Main {
 //        IGenerateSecond.IGenerateFirst<Double,Date,ArrayList<Tweets>,ArrayList<Sentiments>> obj2=new GenerateSentiments();
 //        System.out.println(obj2.generate(date1,date2,tweets,allSentiments));
         //3-ий отчёт
-        IGenerateThird.IGenerateFirst<String,ArrayList<Tweets>,ArrayList<States>,Date> obj=new GenerateStates();
-        System.out.println(obj.generate(tweets,allStates,date1,date2));
+//        IGenerateThird.IGenerateFirst<String,ArrayList<Tweets>,ArrayList<States>,Date> obj=new GenerateStates();
+//        System.out.println(obj.generate(tweets,allStates,date1,date2));
     }
 }
