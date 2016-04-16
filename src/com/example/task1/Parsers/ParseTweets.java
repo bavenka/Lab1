@@ -1,6 +1,6 @@
 package com.example.task1.Parsers;
 
-import com.example.task1.Tweets;
+import com.example.task1.Lines.Tweets;
 
 import java.text.DateFormat;
 import java.text.ParseException;

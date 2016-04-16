@@ -1,4 +1,4 @@
-package com.example.task1;
+package com.example.task1.Lines;
 
 public class Sentiments {
     private String word;
@@ -6,6 +6,14 @@ public class Sentiments {
 
     public Sentiments(){
 
+    }
+
+    public String getWord() {
+        return word;
+    }
+
+    public Double getDigit() {
+        return digit;
     }
 
     public void setWord(String word) {
@@ -18,8 +26,9 @@ public class Sentiments {
 
     @Override
     public String toString() {
-        return
-                 word+
-                "," +digit;
+        return "Sentiments{" +
+                "word='" + word + '\'' +
+                ", digit=" + digit +
+                '}';
     }
 }

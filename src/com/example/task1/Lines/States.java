@@ -1,4 +1,4 @@
-package com.example.task1;
+package com.example.task1.Lines;
 
 import java.util.ArrayList;
 
@@ -22,6 +22,14 @@ public class States {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setCoordinatesList(ArrayList<Triplet<Integer, Double, Double>> coordinatesList) {
+        this.coordinatesList = coordinatesList;
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override

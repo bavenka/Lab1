@@ -1,24 +1,21 @@
 package com.example.task1.Generate;
-import com.example.task1.Readers.Describe;
-import com.example.task1.Sentiments;
-import com.example.task1.Tweets;
+import com.example.task1.Lines.Tweets;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  * Created by Павел on 23.03.2016.
  */
 
-public class GenerateTweets implements IGenerate<ArrayList<Tweets>,String,ArrayList<Tweets>,ArrayList<Sentiments>> {
+public class GenerateTweets implements IGenerateFirst<ArrayList<Tweets>,String> {
 @Override
-    public ArrayList<Tweets> generate(String input,ArrayList<Tweets> tweets,ArrayList<Sentiments> sentiments){
-        ArrayList<Tweets> selectionTweets=new ArrayList();
-       for(Tweets t:tweets){
+    public ArrayList<Tweets> generate(ArrayList<Tweets> allTweets,String input){
+        ArrayList<Tweets> listTweets=new ArrayList();
+       for(Tweets t:allTweets){
            if(t.toString().contains(input)){
-               selectionTweets.add(t);
+               listTweets.add(t);
            }
        }
-        return selectionTweets;
+        return listTweets;
     }
 }

@@ -4,9 +4,9 @@ import com.example.task1.Parsers.IParse;
 import com.example.task1.Parsers.ParseSentiments;
 import com.example.task1.Parsers.ParseStates;
 import com.example.task1.Parsers.ParseTweets;
-import com.example.task1.Sentiments;
-import com.example.task1.States;
-import com.example.task1.Tweets;
+import com.example.task1.Lines.Sentiments;
+import com.example.task1.Lines.States;
+import com.example.task1.Lines.Tweets;
 import org.json.JSONObject;
 import static java.lang.System.*;
 import java.util.ArrayList;
@@ -51,7 +51,7 @@ public class Describe {
        return allSentiments;
     }
 
-    public static void getStates(){
+    public static ArrayList<States> getStates(){
         ArrayList<States> allStates = new ArrayList();
         str=Read.readAll("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\states.json");
         JSONObject json = new JSONObject(str);
@@ -63,8 +63,6 @@ public class Describe {
             state.setName(key);
             allStates.add(state);
         }
-        for(States a:allStates){
-            out.println(a.toString());
-        }
+        return allStates;
     }
 }

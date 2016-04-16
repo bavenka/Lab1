@@ -1,4 +1,4 @@
-package com.example.task1;
+package com.example.task1.Lines;
 
 import java.util.Date;
 
@@ -26,6 +26,22 @@ public class Tweets {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public Double getLatitude() {
+        return latitude;
+    }
+
+    public Double getLongitude() {
+        return longitude;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public String getText() {
+        return text;
     }
 
     @Override

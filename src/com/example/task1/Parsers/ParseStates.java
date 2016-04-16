@@ -1,6 +1,6 @@
 package com.example.task1.Parsers;
 
-import com.example.task1.States;
+import com.example.task1.Lines.States;
 
 import org.json.JSONArray;
 

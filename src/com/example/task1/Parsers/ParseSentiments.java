@@ -1,6 +1,6 @@
 package com.example.task1.Parsers;
 
-import com.example.task1.Sentiments;
+import com.example.task1.Lines.Sentiments;
 
 /**
  * Created by Павел on 03.03.2016.
