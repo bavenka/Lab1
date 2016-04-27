@@ -4,15 +4,21 @@ import com.example.task1.Lines.Tweets;
 import java.util.ArrayList;
 
 /**
- * Created by Павел on 23.03.2016.
+ * Класс служит для реализации интерфейса
+ * @see IGenerate
  */
 
-public class GenerateTweets implements IGenerateFirst<ArrayList<Tweets>,String> {
-@Override
-    public ArrayList<Tweets> generate(ArrayList<Tweets> allTweets,String input){
+public class GenerateTweets implements IGenerate<ArrayList<Tweets>,DescribeGenerateTweets> {
+    @Override
+
+    /**
+     * Реализация 1-ого отчёта
+     * @see IGenerate#generate(Object)
+     */
+    public ArrayList<Tweets> generate(DescribeGenerateTweets obj){
         ArrayList<Tweets> listTweets=new ArrayList();
-       for(Tweets t:allTweets){
-           if(t.toString().contains(input)){
+       for(Tweets t:obj.getListTweets()){
+           if(t.toString().contains(obj.getInput())){
                listTweets.add(t);
            }
        }

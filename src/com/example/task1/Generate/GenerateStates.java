@@ -9,21 +9,27 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.stream.Collectors;
 
 /**
- * Created by Павел on 15.04.2016.
+ Класс служит для реализации интерфейса
+ * @see IGenerate
  */
-public class GenerateStates implements IGenerateThird.IGenerateFirst<String,ArrayList<Tweets>,ArrayList<States>,Date> {
+public class GenerateStates implements IGenerate<String,DescribeGenerateStates> {
     @Override
-    public  String generate(ArrayList<Tweets> allTweets, ArrayList<States> allStates, Date time_1, Date time_2) {
+
+    /**
+     * Реализация 2-ого отчёта
+     * @see IGenerate#generate(Object)
+     */
+    public  String generate(DescribeGenerateStates obj) {
         ArrayList<Tweets> listTweets = new ArrayList();
         HashMap<String,Integer> states=new HashMap();
         int count=0;
-        for (Tweets t : allTweets) {
-            if (t.getDate().after(time_1) && t.getDate().before(time_2)) {
+        for (Tweets t : obj.getListTweets()) {
+            if (t.getDate().after(obj.getStart()) && t.getDate().before(obj.getFinish())) {
                 listTweets.add(t);
             }
         }
 
-        for (States state : allStates) {
+        for (States state : obj.getListStates()) {
             int nElements=state.getCoordinatesList().size();
             ArrayList<Triplet<Integer,Double,Double>> listCoordinates = state.getCoordinatesList();
             ArrayList<Double> xStates=new ArrayList();
@@ -31,22 +37,21 @@ public class GenerateStates implements IGenerateThird.IGenerateFirst<String,Arra
             for (Tweets tweet : listTweets) {
                 Double y=tweet.getLatitude();
                 Double x=tweet.getLongitude();
-                for(Triplet<Integer,Double,Double> obj: listCoordinates){
+                for(Triplet<Integer,Double,Double> object: listCoordinates){
 
-                    xStates.add(obj.getValue1());
-                    yStates.add(obj.getValue2());
+                    xStates.add(object.getValue1());
+                    yStates.add(object.getValue2());
 
                 }
-                if(BooleanStates.pnpoly(nElements,xStates,yStates,x,y)==true) {
+                if(obj.pnpoly(nElements,xStates,yStates,x,y)==true) {
                     count++;
 
                 }
             }
             states.put(state.getName(), count);
             count=0;
-            String word=BooleanStates.SortMap(states);
         }
-        return BooleanStates.SortMap(states);
+        return obj.SortMap(states);
     }
 }
 
