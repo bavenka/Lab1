@@ -2,6 +2,10 @@ package com.example.task1;
 
 
 import com.example.task1.MapStates.MapStates;
+import com.example.task1.Readers.Describe;
+
+import java.sql.Connection;
+import java.sql.SQLException;
 
 public class Main {
 
@@ -48,7 +52,17 @@ public class Main {
 //        obj.setListStates(Describe.getStates());
 //        IGenerate<String,DescribeGenerateStates> test=new GenerateStates();
 //        System.out.println(test.generate(obj));
-        MapStates obj=new MapStates();
-        obj.showFrame();
+//        MapStates obj=new MapStates();
+//        obj.showFrame();
+try{
+    //DataBase.addInfo();
+   // DataBase.deleteInfo();
+    //DataBase.updateInfo();
+    //DataBase.getInfo();
+   Connection connection= DataBase.getDBConnection();
+    DataBase.addInfo(connection, Describe.getTweets());
+}catch (SQLException e){
+    e.printStackTrace();
+}
     }
 }

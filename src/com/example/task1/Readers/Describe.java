@@ -29,7 +29,7 @@ public class Describe {
     }
     public static ArrayList<Tweets> getTweets(){
         ArrayList<Tweets> allTweets = new ArrayList<Tweets>();
-        lines = Read.readStrings("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\all_tweets.txt",1,1000);
+        lines = Read.readStrings("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\all_tweets.txt",100,200);
         checkStrings();
         for (String s : lines) {
             IParse<Tweets, String> parser = new ParseTweets();
@@ -43,7 +43,7 @@ public class Describe {
 
     public static ArrayList<Sentiments> getSentiments(){
         ArrayList<Sentiments> allSentiments = new ArrayList<Sentiments>();
-        lines = Read.readStrings("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\sentiments.csv",0,1000000);
+        lines = Read.readStrings("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\sentiments.csv",100,110);
         for (String s : lines) {
            IParse <Sentiments,String> parser = new ParseSentiments();
            allSentiments.add(parser.parse(s));

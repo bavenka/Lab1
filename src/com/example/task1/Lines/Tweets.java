@@ -48,9 +48,9 @@ public class Tweets {
     public String toString() {
         return
                 "latitude=" + latitude +
-                ", longitude=" + longitude +
-                ", date=" + date +
-                ", text='" + text + '\'';
+                        ", longitude=" + longitude +
+                        ", date=" + date +
+                        ", text='" + text + '\'';
     }
 }
 

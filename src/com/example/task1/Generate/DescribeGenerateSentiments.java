@@ -7,73 +7,73 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- * Класс служит для описания 2-ого отчёта
+ * The class used to describe the second report
  */
 public class DescribeGenerateSentiments {
 
-    /** Свойство - список твитов,входяших в заданный промежуток времени */
+    /** The property - a list of tweets, within the specified period of time */
     private ArrayList<Tweets>listTweets;
 
-    /** Свойство - список всех эмоций */
+    /** The property - a list of all emotions */
     private ArrayList<Sentiments>listSentiments;
 
-    /** Свойство - начало времени отсчёта */
+    /** Soul - the beginning of the time of reference */
     private Date start;
 
-    /** Свойство - конец времени отсчёта */
+    /** Property - the end of the time reference */
     private Date finish;
 
-    /** Функция для получения значения поля {@link DescribeGenerateSentiments#listSentiments}
-     * @return Возвращает список всех эмоций
+    /** Function to get the value field {@link DescribeGenerateSentiments#listSentiments}
+     * @return It returns a list of all the emotions
      */
     public ArrayList<Sentiments> getListSentiments() {
         return listSentiments;
     }
 
-    /** Функция для установления значения полю {@link DescribeGenerateSentiments#listSentiments}
-     * @param listSentiments-список всех эмоций
+    /** The function for adjusting the field {@link DescribeGenerateSentiments#listSentiments}
+     * @param listSentiments-a list of all emotions
      */
     public void setListSentiments(ArrayList<Sentiments> listSentiments) {
         this.listSentiments = listSentiments;
     }
 
-    /** Функция для получения значения поля {@link DescribeGenerateSentiments#start}
-     * @return Возвращает значение начала отсчёта времени
+    /** Function to get the value field {@link DescribeGenerateSentiments#start}
+     * @return Returns the beginning of the reference time
      */
     public Date getStart() {
         return start;
     }
 
-    /** Функция для установления значения полю {@link DescribeGenerateSentiments#start}
-     * @param start-значение,введённое с клавиатуры(=начало отсчёта времени)
+    /** The function for adjusting the field {@link DescribeGenerateSentiments#start}
+     * @param start-the value entered with the keyboard
      */
     public void setStart(Date start) {
         this.start = start;
     }
 
-    /** Функция для получения значения поля {@link DescribeGenerateSentiments#listTweets}
-     * @return Возвращает список твитов,входящих в заданный промежуток времени
+    /** Function to get the value field {@link DescribeGenerateSentiments#listTweets}
+     * @return Returns a list of tweets, within the specified period of time
      */
     public ArrayList<Tweets> getListTweets() {
         return listTweets;
     }
 
-    /** Функция для установления значения полю {@link DescribeGenerateSentiments#listTweets}
-     * @param listTweets-список всех твитов
+    /** The function for adjusting the field {@link DescribeGenerateSentiments#listTweets}
+     * @param listTweets-a list of all tweets
      */
     public void setListTweets(ArrayList<Tweets> listTweets) {
         this.listTweets = listTweets;
     }
 
-    /** Функция для получения значения поля {@link DescribeGenerateSentiments#finish}
-     * @return Возвращает значение конца отсчёта времени
+    /** Function to get the value field {@link DescribeGenerateSentiments#finish}
+     * @return Returns the value of the end of the reference time
      */
     public Date getFinish() {
         return finish;
     }
 
-    /** Функция для установления значения полю {@link DescribeGenerateSentiments#finish}
-     * @param finish-значение,введённое с клавиатуры(=конец отсчёта времени)
+    /** The function for adjusting the field {@link DescribeGenerateSentiments#finish}
+     * @param finish-the value entered with the keyboard
      */
     public void setFinish(Date finish) {
         this.finish = finish;
