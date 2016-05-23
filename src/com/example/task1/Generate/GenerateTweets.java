@@ -4,7 +4,7 @@ import com.example.task1.Lines.Tweets;
 import java.util.ArrayList;
 
 /**
- * Класс служит для реализации интерфейса
+ * Class is used to implement the interface
  * @see IGenerate
  */
 
@@ -12,7 +12,7 @@ public class GenerateTweets implements IGenerate<ArrayList<Tweets>,DescribeGener
     @Override
 
     /**
-     * Реализация 1-ого отчёта
+     * Implementation of the first report
      * @see IGenerate#generate(Object)
      */
     public ArrayList<Tweets> generate(DescribeGenerateTweets obj){

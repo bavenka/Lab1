@@ -1,14 +1,14 @@
 package com.example.task1.Generate;
 
 /**
- * Параметризованный интерфейс,с помощью которого
- * объявляется метод,где тип даныых и тип возвращвющего
- * значения указаны в виде параметров
+ * A parameterized interface, through which
+    * declared method where given type and return type
+   * values are indicated as parameters
  */
 public interface IGenerate<T,V> {
-    /** Функция,реализующая 1 из 3 отчётов
-     * @param params-описание отчёта
-     * @return Возвращает требуемое отчётом значение
+    /** The function that implements 1 of 3 reports
+     * @param params-report description
+     * @return Returns the value of the annual report required
      */
     public T generate(V params);
 }

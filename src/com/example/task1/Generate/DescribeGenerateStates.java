@@ -7,30 +7,29 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * Класс служит для описания 3-его лтчёта
+ * The class is used to describe the 3rd report
  */
 public class DescribeGenerateStates {
 
-    /** Свойство - список твитов,входяших в заданный промежуток времени */
+    /** The property - a list of tweets, within the specified period of time */
     private ArrayList<Tweets> listTweets;
 
-    /** Свойство - список всех штатов */
+    /** The property - a list of all the states */
     private ArrayList<States>listStates;
 
-    /** Свойство - начало времени отсчёта */
+    /** Soul - the beginning of the time of reference */
     private Date start;
 
-    /** Свойство - конец времени отсчёта */
+    /** Property - the end of the time reference */
     private Date finish;
 
-    /** Функция для проверки на пренадлежность опубликованного твита штату
-     * @param npol-количество координат штата
-     * @param xp-список вещественных значений штата,отвечающих за широту
-     * @param yp-список вещественных значений штата,отвечающих за долготу
-     * @param x-вещественное значение широты твита
-     * @param y -вещественное значение долготы твита
-     * @return Возвращает ключевое слово true,если опубликованный твит пренадлежит данному штату,
-     * в противном случае-false
+    /** The function to check on the state of affiliation published tweets
+     * @param npol-the number of state origin
+     * @param xp-List of real state values corresponding to the breadth of the
+     * @param yp-List of real state values, responsible for longitude
+     * @param x-real value tweet latitude
+     * @param y -real value longitude Tweets
+     * @return Returns the keyword true, if published tweet belongs to this state, otherwise-false
      */
     public Boolean pnpoly(int npol, ArrayList<Double> xp, ArrayList<Double> yp, Double x, Double y) {
         Boolean c = false;
@@ -43,13 +42,13 @@ public class DescribeGenerateStates {
         return c;
     }
 
-    /** Функция для сортировки коллекции штатов по возрастанию значения количества твитов,
-     * опубликованных из данного шата и определения названия штата,из котого было
-     * отправлено наибольшее количества твитов в заданный промежуток времени путём
-     * выбора последнего элемента уже отсортированной коллекции
-     * @param map-коллекция штатов
-     * @return Возвращает значение названия штата,из которого было отправлено наибольшее
-     * количество твитов в заданнный промежуток времени
+    /** Function to sort a collection of states in increasing the value amount of tweets,
+       * published from this sata and for the name of the state, from which you'll have been
+       * sent the largest number of tweets at a given time interval by
+       * select the last element is already sorted collection
+     * @param map-state collection
+     * @return Returns the name of the state from which it was sent to the highest
+         *  number of tweets per zadannny period of time
      */
     public String SortMap(HashMap<String,Integer> map){
         map= map.entrySet().stream()
@@ -61,57 +60,57 @@ public class DescribeGenerateStates {
         return entryList.get(entryList.size()-1).getKey();
     }
 
-    /** Функция для получения значения поля {@link DescribeGenerateStates#listStates}
-     * @return Возвращает список штатов,входяший в заданный промежуток времени
+    /** Function to get the value field {@link DescribeGenerateStates#listStates}
+     * @return Returns a list of the states included in the specified period of time
      */
     public ArrayList<States> getListStates() {
         return listStates;
     }
 
-    /** Функция для установления значения полю {@link DescribeGenerateStates#listStates}
-     * @param listStates-список всех штатов
+    /** The function for adjusting the field {@link DescribeGenerateStates#listStates}
+     * @param listStates-a list of all the states
      */
     public void setListStates(ArrayList<States> listStates) {
         this.listStates = listStates;
     }
 
-    /** Функция для получения значения поля {@link DescribeGenerateStates#start}
-     * @return Возвращает значение начала отсчёта времени
+    /** Function to get the value field {@link DescribeGenerateStates#start}
+     * @return Returns the beginning of the reference time
      */
     public Date getStart() {
         return start;
     }
 
-    /** Функция для установления значения полю {@link DescribeGenerateStates#start}
-     * @param start-значение,введённое с клавиатуры(=начало отсчёта времени)
+    /** The function for adjusting the field {@link DescribeGenerateStates#start}
+     * @param start-the value entered by the keyboard (= reference point of time)
      */
     public void setStart(Date start) {
         this.start = start;
     }
 
-    /** Функция для получения значения поля {@link DescribeGenerateSentiments#listTweets}
-     * @return Возвращает список твитов,входящих в заданный промежуток времени
+    /** Function to get the value field {@link DescribeGenerateSentiments#listTweets}
+     * @return Returns a list of tweets, within the specified period of time
      */
     public ArrayList<Tweets> getListTweets() {
         return listTweets;
     }
 
-    /** Функция для установления значения полю {@link DescribeGenerateStates#listTweets}
-     * @param listTweets-список всех твитов
+    /** The function for adjusting the field {@link DescribeGenerateStates#listTweets}
+     * @param listTweets-a list of all tweets
      */
     public void setListTweets(ArrayList<Tweets> listTweets) {
         this.listTweets = listTweets;
     }
 
-    /** Функция для получения значения поля {@link DescribeGenerateStates#finish}
-     * @return Возвращает значение конца отсчёта времени
+    /** Function to get the value field {@link DescribeGenerateStates#finish}
+     * @return Returns the value of the end of the reference time
      */
     public Date getFinish() {
         return finish;
     }
 
-    /** Функция для установления значения полю {@link DescribeGenerateStates#finish}
-     * @param finish-значение,введённое с клавиатуры(=конец отсчёта времени)
+    /** The function for adjusting the field {@link DescribeGenerateStates#finish}
+     * @param finish-the value entered by the keyboard (= end of the reference time)
      */
     public void setFinish(Date finish) {
         this.finish = finish;

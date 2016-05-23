@@ -1,11 +1,18 @@
 package com.example.task1;
 
 
-import com.example.task1.MapStates.MapStates;
+import com.example.task1.DataBase.AddInfo;
+import com.example.task1.DataBase.ConnectDB;
+import com.example.task1.DataBase.GetInfo;
+import com.example.task1.Lines.Sentiments;
+import com.example.task1.Lines.States;
+import com.example.task1.Lines.Tweets;
 import com.example.task1.Readers.Describe;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
@@ -13,8 +20,8 @@ public class Main {
 //          1-ый отчёт
 //        DescribeGenerateTweets obj=new DescribeGenerateTweets();
 //        System.out.println("Шаблон:#...");
-//        Scanner in=new Scanner(System.in);
-//        String hashtag=in.nextLine();
+        Scanner in=new Scanner(System.in);
+        String hashtag=in.nextLine();
 //        obj.setInput(hashtag);
 //        obj.setListTweets(Describe.getTweets());
 //        IGenerate<ArrayList<Tweets>,DescribeGenerateTweets> test=new GenerateTweets();
@@ -54,15 +61,25 @@ public class Main {
 //        System.out.println(test.generate(obj));
 //        MapStates obj=new MapStates();
 //        obj.showFrame();
-try{
-    //DataBase.addInfo();
-   // DataBase.deleteInfo();
-    //DataBase.updateInfo();
-    //DataBase.getInfo();
-   Connection connection= DataBase.getDBConnection();
-    DataBase.addInfo(connection, Describe.getTweets());
-}catch (SQLException e){
-    e.printStackTrace();
-}
+        //x-лаба
+        try{
+            Connection connection= ConnectDB.getDBConnection();
+            ArrayList<Tweets> allTweets=Describe.getTweets();
+            ArrayList<Sentiments>allSentiments=Describe.getSentiments();
+            ArrayList<States>allStates=Describe.getStates();
+            //for(Tweets tweet:allTweets)
+               // AddInfo.addTweets(connection,tweet);
+           // for(Sentiments sentiment:allSentiments)
+              //  AddInfo.addSentiments(connection,sentiment);
+           // for(States state:allStates){
+              // AddInfo.addStates(connection,state);
+           // }
+       // GetInfo.getTweets(connection);
+       //  GetInfo.getSentiments(connection);
+
+                GetInfo.doReport(connection,hashtag);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 }

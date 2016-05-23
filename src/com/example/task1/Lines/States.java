@@ -6,13 +6,23 @@ import org.javatuples.*;
 
 public class States {
     private String name;
+    private Integer group;
+    private Double latitude;
+    private Double longitude;
     private ArrayList<Triplet<Integer,Double,Double>> coordinatesList;
 
     public States(){
         this.coordinatesList=new ArrayList<Triplet<Integer, Double, Double>>();
     }
 
-    public void addCoordinates(int group,double latitude,double longitude){
+    public States(String name,Integer group,Double latitude,Double longitude) {
+        this.name = name;
+        this.group=group;
+        this.latitude=latitude;
+        this.longitude=longitude;
+    }
+
+    public void addCoordinates(int group, double latitude, double longitude){
         coordinatesList.add(new Triplet<Integer,Double,Double>(group,latitude,longitude));
     }
 
@@ -34,9 +44,12 @@ public class States {
 
     @Override
     public String toString() {
-        return
+        return "States{" +
                 "name='" + name + '\'' +
-                ", coordinatesList=" + coordinatesList;
+                ", group=" + group +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                '}';
     }
 }
 

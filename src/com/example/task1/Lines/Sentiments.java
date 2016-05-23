@@ -8,6 +8,11 @@ public class Sentiments {
 
     }
 
+    public Sentiments(String word, Double digit) {
+        this.word = word;
+        this.digit = digit;
+    }
+
     public String getWord() {
         return word;
     }

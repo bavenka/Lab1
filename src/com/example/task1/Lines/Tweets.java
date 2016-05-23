@@ -12,6 +12,13 @@ public class Tweets {
 
     }
 
+    public Tweets(Double latitude, Double longitude, Date date, String text) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.date = date;
+        this.text = text;
+    }
+
     public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
@@ -46,11 +53,12 @@ public class Tweets {
 
     @Override
     public String toString() {
-        return
+        return "Tweets{" +
                 "latitude=" + latitude +
-                        ", longitude=" + longitude +
-                        ", date=" + date +
-                        ", text='" + text + '\'';
+                ", longitude=" + longitude +
+                ", date=" + date +
+                ", text='" + text + '\'' +
+                '}';
     }
 }
 

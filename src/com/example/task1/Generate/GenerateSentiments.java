@@ -5,14 +5,14 @@ import com.example.task1.Lines.Tweets;
 import java.util.ArrayList;
 
 /**
- Класс служит для реализации интерфейса
+ Class is used to implement the interface
  * @see IGenerate
  */
 public class GenerateSentiments implements IGenerate<Double,DescribeGenerateSentiments> {
     @Override
 
     /**
-     * Реализация 2-ого отчёта
+     * Implementation of the second report
      * @see IGenerate#generate(Object)
      */
     public Double generate(DescribeGenerateSentiments obj) {

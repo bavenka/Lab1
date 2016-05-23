@@ -7,39 +7,39 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- *Класс служит для описания 1-ого отчёта
+ *The class used to describe the first report
  */
 public class DescribeGenerateTweets {
 
-    /** Свойство - хэштег */
+    /** Property - hashtag */
     private String input;
 
-    /** Свойство - список твитов,содержащий необходимый хэштег */
+    /** The property - a list of tweets containing the hashtag required */
     private ArrayList<Tweets>listTweets;
 
-    /** Функция для получения значения поля {@link DescribeGenerateTweets#listTweets}
-     * @return Возвращает список твитов
+    /** Function to get the value field {@link DescribeGenerateTweets#listTweets}
+     * @return Returns a list of tweets
      */
     public ArrayList<Tweets> getListTweets() {
         return listTweets;
     }
 
-    /** Функция для установления значения полю {@link DescribeGenerateTweets#listTweets}
-     * @param listTweets-список всех твитов
+    /** The function for adjusting the field {@link DescribeGenerateTweets#listTweets}
+     * @param listTweets-a list of all tweets
      */
     public void setListTweets(ArrayList<Tweets> listTweets) {
         this.listTweets = listTweets;
     }
 
-    /** Функция для получения значения поля {@link DescribeGenerateTweets#input}
-     * @return Возвращает хэштег
+    /** Function to get the value field {@link DescribeGenerateTweets#input}
+     * @return Returns hashtag
      */
     public String getInput() {
         return input;
     }
 
-    /** Функция для установления значения полю {@link DescribeGenerateTweets#input}
-     * @param input-значение,введённое с клавиатуры(=хэштег)
+    /** The function for adjusting the field {@link DescribeGenerateTweets#input}
+     * @param input-the value entered by the keyboard (= hashtag)
      */
     public void setInput(String input) {
         this.input = input;

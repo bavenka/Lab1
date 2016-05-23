@@ -27,17 +27,15 @@ public class Describe {
             }
         }
     }
+
     public static ArrayList<Tweets> getTweets(){
         ArrayList<Tweets> allTweets = new ArrayList<Tweets>();
-        lines = Read.readStrings("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\all_tweets.txt",100,200);
+        lines = Read.readStrings("C:\\Users\\Павел\\IdeaProjects\\Lab1\\src\\com\\example\\task1\\Files\\all_tweets.txt",1,200);
         checkStrings();
         for (String s : lines) {
             IParse<Tweets, String> parser = new ParseTweets();
             allTweets.add(parser.parse(s));
         }
-//        for(Tweets s:allTweets){
-//            out.println(s.toString());
-//        }
         return allTweets;
     }
 
